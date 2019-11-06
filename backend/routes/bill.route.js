@@ -3,7 +3,7 @@ const app = express();
 const billRoute = express.Router();
 
 // Bill model
-let Bill = require('/home/ist/mean-stack-project/ravi-enterprises/backend/database/model/bills-model.js');
+let Bill = require('../database/model/bills-model.js');
 
 // // Add Bill
 billRoute.route('/add-bill').post((req, res, next) => {
