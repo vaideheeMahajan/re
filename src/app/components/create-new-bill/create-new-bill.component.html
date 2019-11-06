@@ -1,0 +1,102 @@
+<div fxFill class="create-new-bill">
+  <div class="new-billing-sub-header padding-left-15" fxLayout="row">
+    Create New Bill
+  </div>
+  <form class="new-bill-form padding-left-15">
+    <div fxLayout="column">
+      <div fxLayout="row" fxLayoutGap="10px">
+        
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="Customer Name" [(ngModel)]="newBillDetails.customerName" name="customerName">
+          </mat-form-field>
+        
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="Mobile Number"  type="number" [(ngModel)]="newBillDetails.mobileNumber" name="mobileNumber">
+          </mat-form-field>
+        
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="Address" [(ngModel)]="newBillDetails.address" name="address">
+          </mat-form-field>
+        
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="Invoice Number" [(ngModel)]="newBillDetails.invoiceNumber" name="invoiceNumber">
+          </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-around none" fxLayoutGap="10px">
+        
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="GST Number" [(ngModel)]="newBillDetails.gstNumber" name="gstNumber">
+          </mat-form-field>
+        
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="PAN Card Number" [(ngModel)]="newBillDetails.panNumber" name="panNumber">
+          </mat-form-field>
+        
+          <mat-form-field fxFlex="25">
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="newBillDetails.date" name="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        
+          <mat-form-field class="" fxFlex="25">
+            <mat-label>Mode</mat-label>
+            <mat-select [(ngModel)]="newBillDetails.mode" name="mode">
+              <mat-option *ngFor="let mode of modes" [value]="mode">
+                {{mode}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    <mat-card class="margin-20 extra-param-card-wrapper">
+      <mat-card-title fxLayout="row" class="card-title">
+        <div fxFlex="90" class="item-details">Items Details</div>
+        <div fxFlex="10" class="right-align">
+          <button mat-icon-button class="right-align" (click)="fillNewItemDetails()">
+            <mat-icon>playlist_add</mat-icon>
+          </button>
+        </div>
+      </mat-card-title>
+      <mat-card-content class="service-param-border padding-top-15"  *ngFor="let item of newBillDetails.itemsList; index as i" >
+        <div fxLayout="row" fxLayoutGap="50px">
+          <!-- <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="S. No." type="text" [(ngModel)]="" name="i">
+          </mat-form-field> -->
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="Description" type="text" [(ngModel)]="item.description" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="Amount" type="number" [(ngModel)]="item.amount" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="Quantity" type="number" [(ngModel)]="item.quantity" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field class="" fxFlex="25">
+            <mat-label>Gst Percentage</mat-label>
+            <mat-select [(ngModel)]="item.gstPercentage" [ngModelOptions]="{standalone: true}">
+              <mat-option *ngFor="let percentage of gstPercentageList" [value]="percentage">
+                {{percentage}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" fxLayoutGap="50px">
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="Discount %" type="number" [(ngModel)]="item.discount" [ngModelOptions]="{standalone: true}">
+          </mat-form-field>
+          <mat-form-field class="" fxFlex="25">
+            <input matInput placeholder="Total" type="number" disabled>
+          </mat-form-field>
+          <span fxFlex="25"></span>
+          <span fxFlex="25"></span>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+  <mat-divider></mat-divider>
+  <div class="new-bill-action-footer" fxLayout="row" fxLayoutAlign="end none">
+    <button mat-raised-button class="button" (click)="closeNewBillDetailsDialog()">Cancel</button>
+    <button mat-raised-button class="button" (click)="saveNewBillDetails()">Save</button>
+    <!-- <button class="">Update</button> -->
+  </div>
+</div>

@@ -1,0 +1,29 @@
+.main-content-wrapper {
+    position: absolute;
+    height: calc(100% - 40px);
+    width: 100%;
+    background-color: #e2e2e2;
+}
+.sidenav-wrapper {
+    width: 210px;
+}
+.main-heading {
+    font-size: 30px;
+    text-align: center;
+}
+.sub-heading{
+    font-size: 12px;
+    text-align: center;
+    padding-left: 65px;
+}
+.toolbar{
+    background-color: black;
+    height: 30px;
+    padding-top: 10px;
+}
+.toolbar-button{
+    color: white;
+    border: 0px !important;
+    font-size: 15px;
+    background-color: black;
+}

@@ -1,0 +1,15 @@
+<div class="billing-sub-header" fxLayout="row">
+    <button mat-icon-button aria-label="" [routerLink]="['/createBill']">
+            <mat-icon>playlist_add</mat-icon>
+    </button>
+</div>
+<ag-grid-angular 
+    style="height: calc(100vh - 140px);" 
+    class="ag-theme-balham"
+    [rowData]="rowData" 
+    [columnDefs]="columnDefs"
+    [headerHeight]="50"
+    [rowHeight]="50"
+    [gridOptions]=gridOptions
+    >
+</ag-grid-angular>

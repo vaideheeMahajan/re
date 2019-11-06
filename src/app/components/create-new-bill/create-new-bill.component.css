@@ -1,0 +1,41 @@
+.new-billing-sub-header{
+    height: 30px;
+    align-items: center;
+    background-color: #ececec;
+}
+.create-new-bill .padding-left-15{
+    padding-left: 15px;
+}
+.create-new-bill .padding-top-15{
+    padding-top: 15px;
+}
+.create-new-bill .divider{
+    padding-bottom: 15px;
+}
+.create-new-bill .new-bill-form {
+    height: calc(100vh - 147px);
+    overflow-x: auto;
+}
+.create-new-bill .new-bill-action-footer{
+   /* background-color: #ececec; */
+}
+.create-new-bill .service-param-border{
+    border: 1px solid rgb(238, 238, 238);
+    padding: 10px !important;
+}
+.create-new-bill .card-title{
+    height: 30px;
+    background-color: #ececec;
+    margin: 0px;
+}
+.create-new-bill .button{
+    border-radius: 0px !important;
+}
+.create-new-bill .item-details{
+    font-size: 15px !important;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+.create-new-bill .right-align{
+    text-align: right;
+}
